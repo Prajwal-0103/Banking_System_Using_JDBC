@@ -1,6 +1,6 @@
 # Banking System (JDBC)
 
-Simple console banking application built with Java and JDBC. It lets users register, open an account, deposit/withdraw, transfer funds, and check balances against a MySQL database.
+Simple console banking application built with Java and JDBC. It lets users to register, login, open an account, deposit/withdraw, transfer amount, and check balances against a MySQL database.
 
 ## Prerequisites
 - `Java` (JDK 8+)
@@ -28,7 +28,7 @@ USE banking_management_system;
 -- User login table
 CREATE TABLE IF NOT EXISTS USER (
   full_name VARCHAR(255) NOT NULL,
-  email VARCHAR(255) NOT NULL UNIQUE,
+  email VARCHAR(255) PRIMARY KEY,
   password VARCHAR(255) NOT NULL
 );
 
@@ -36,8 +36,8 @@ CREATE TABLE IF NOT EXISTS USER (
 CREATE TABLE IF NOT EXISTS accounts (
   acc_num BIGINT PRIMARY KEY,
   full_name VARCHAR(255) NOT NULL,
-  email VARCHAR(255) NOT NULL,
-  balance DOUBLE NOT NULL,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  balance DECIMAL(10,2) NOT NULL,
   pin VARCHAR(32) NOT NULL
 );
 ```
