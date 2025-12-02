@@ -3,7 +3,7 @@ import java.util.*;
 public class Main {
     private static final String url = "jdbc:mysql://localhost:3306/banking_management_system";
     private static final String user = "root";
-    private static final String password = "Prajwal@0103";
+    private static final String password = "Prajwal@****";
     public static void main(String[] args) {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
