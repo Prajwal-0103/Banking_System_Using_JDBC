@@ -42,29 +42,6 @@ CREATE TABLE IF NOT EXISTS accounts (
 );
 ```
 
-## Build
-From the project root on Windows PowerShell:
-
-```powershell
-# 1) Download MySQL Connector/J (or copy an existing one into lib/)
-New-Item -ItemType Directory -Path "lib" -Force | Out-Null
-Invoke-WebRequest -Uri "https://repo1.maven.org/maven2/com/mysql/mysql-connector-j/9.5.0/mysql-connector-j-9.5.0.jar" `
-  -Headers @{ 'User-Agent' = 'Mozilla/5.0' } -OutFile "lib/mysql-connector-j-9.5.0.jar" -UseBasicParsing
-
-# 2) Create output directory
-New-Item -ItemType Directory -Path "out\production\Banking System" -Force | Out-Null
-
-# 3) Compile sources
-javac -d "out\production\Banking System" src\*.java
-```
-
-## Run
-Run with the compiled classes and the driver on the classpath:
-
-```powershell
-java -cp "out\production\Banking System;lib\mysql-connector-j-9.5.0.jar" Main
-```
-
 ## Optional: Package as JAR
 This project can run directly from class files. If you prefer a JAR, you can create one without the driver bundled and run it with an explicit classpath:
 
